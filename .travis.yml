@@ -1,0 +1,16 @@
+language: php
+
+php:
+    - 7.1
+    - 7.2
+
+install:
+    - composer install
+
+script:
+    - vendor/bin/monorepo-builder init
+    - vendor/bin/monorepo-builder validate
+    - vendor/bin/monorepo-builder merge
+
+notifications:
+    email: false
